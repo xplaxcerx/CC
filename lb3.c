@@ -5,7 +5,7 @@ int main () {
     printf ("Enter h (step) -> ");
     scanf ("%lf", &h);
     printf("\nx             f(x)\n- - - - - - - - - - - -\n");
-    n = 1.5 / h;
+    n = 3 / h;
     for (i = 0; i <= n; i++)
     {
         if (i <= (n / 2))
