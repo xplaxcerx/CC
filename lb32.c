@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <math.h>
-int main () {
+int main()
+{
     double x = 0, h, f, i, n;
     printf ("Введите h -> ");
     scanf ("%lf", &h);
     printf("\nx             f(x)\n- - - - - - - - - - - -\n");
-    n = 3 / h;
-    for (i = 0; i <= n; i++)
+    i = 3 / h;
+    while (n <= i)
     {
-        if (i <= (n / 2))
+        if (-1.5 <= x && x <= 0)
             f = ((pow(x, 2)-pow(2*x, 3))*cos(pow(x,2)));
-        else
+        else if (0 < x && x <= 1.5)
             f = exp(sin(x));
         printf("%lf      %lf\n", x, f);
         x += h;
+        n++;
     }
     return 0;
 }
-//3.000000      1.151563
