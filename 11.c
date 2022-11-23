@@ -1,16 +1,23 @@
 #include <stdio.h>
 #include <math.h>
-int main() {
-    double x;
-    printf("Введите значение x {0 <= x <= 0.45} \n");
-    scanf("%lf", &x);
-    if (x >= 0 && x <= 0.45) { 
-        double y = acos(2*x / (1+sqrt(x)));
-        double z = log(sin(M_PI / y));
-        printf("y(x) = %lf\nz(y) = %lf\n", y, z);
+unsigned long long int cycle (unsigned long long int a, unsigned long long int b){
+    unsigned long long int k, i;
+    k = 0;
+    for (i = 1 ;; i++){
+    k = i;
+    if (k%a==0 && k%b==0)
+    {
+    return(k);
+    break;
     }
-    else {
-        printf("Некорректное значение x \n");
-    }
+}
+}
+int main()
+{   unsigned long long int a, b;
+    printf("Введите значение a ->\n");
+    scanf("%llu", &a);
+    printf("Введите значение b ->\n");
+    scanf("%llu", &b);
+    printf("%llu\n", cycle(a,b));
     return 0;
 }
