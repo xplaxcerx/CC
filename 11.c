@@ -12,6 +12,16 @@ unsigned long long int cycle (unsigned long long int a, unsigned long long int b
     }
 }
 }
+}
+
+unsigned long long int rec (unsigned long long int a, unsigned long long int b, unsigned long long int k)
+{ if (k%a==0 && k%b==0)
+  return k;
+  else 
+{
+  k++
+  rec(a,b,k);
+}
 int main()
 {   unsigned long long int a, b;
     printf("Введите значение a ->\n");
