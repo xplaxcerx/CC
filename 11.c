@@ -29,5 +29,6 @@ int main()
     printf("Введите значение b ->\n");
     scanf("%llu", &b);
     printf("%llu\n", cycle(a,b));
+    printf("%llu\n", rec(a,b,1));
     return 0;
 }
