@@ -35,16 +35,24 @@ void compareAndReflect(int upperSum, int lowerSum, int n, int m, int matrix[n][m
     if (lowerSum<upperSum){
         for (int i = 0; i < n; i++){
             for (int j = 0; j < m; j++) {
-                matrix[i][j] = matrix[j][i];
-                }
+                matrix[j][i] = matrix[i][j];
+                                }
             }
+    printf("Upper sum = %d\n", lowerSum);
+    printf("Lower sum = %d\n", upperSum);
+    printf("Upper sum\n");
     }
+    
     if (upperSum<lowerSum){
         for (int i = 0; i < n; i++){
             for (int j = 0; j < m; j++) {
-                matrix[j][i] = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                
                 }
         }
+    printf("Lower sum = %d\n", upperSum);
+    printf("Upper sum = %d\n", lowerSum);
+    printf("Lower sum\n");
     }
 
 }
@@ -56,7 +64,6 @@ int main()
     int m;
     printf("Введите размерность матрицы -> \n");
     scanf("%d %d", &n, &m);
-    // printf("\n");
     int matrix[n][m];
     fillMatrix(n,m,matrix);
     printf("Исходная матрица\n");
