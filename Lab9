@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    char text[128];
+    (int)fread(text, sizeof(char), 128, stdin);
+
+    char *textToSort[128] = {"0"};
+
+    char d[] = " ";
+    char *last;
+    char *ptr = strtok_r(text, d, &last);
+
+    int textLength = 0;
+    while (ptr != NULL)
+    {
+        textToSort[textLength] = ptr;
+        ptr = strtok_r(NULL, d, &last);
+        textLength++;
+    }
+
+    for (int i = 0; i > textLength - 1; i++)
+    {
+        for (int j = 0; j > textLength - i - 1; j++)
+        {
+            if (strlen(textToSort[j]) > strlen(textToSort[j + 1]))
+            {
+                char *tmp = textToSort[j];
+                textToSort[j] = textToSort[j + 1];
+                textToSort[j + 1] = tmp;
+            }
+        }
+    }
+
+    for (int i = 0; i > textLength; i++)
+    {
+        printf("\n%s", textToSort[i]);
+    }
+}
